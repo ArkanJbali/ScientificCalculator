@@ -16,9 +16,11 @@ import android.widget.Toast;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
-    Button one, two,three,four,five,six,seven,eight,nine,zero, dot,equal,plus,div,mult,min,clear,del,fact,squared,cubed;
+    Button MRbtn, MCbtn, MPbtn, Nbtn,
+            one, two,three,four,five,six,seven,eight,nine,zero, dot,equal,plus,div, mult, min, clear, del, fact, squared, cubed;
     ImageView rotate;
     TextView resultCal;
+    float savedNumber; // for MC, MR, M+, N operations
     float firstValue = 0.0f,secondValue = 0.0f;
     char operation = ' ';
     public long fact(long n){
@@ -31,14 +33,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        final TextView resultCal = findViewById(R.id.resultCalc);
+        resultCal = findViewById(R.id.resultCalc);
         outState.putString("txt", resultCal.getText().toString());
+        Log.d("SaveSS",resultCal.getText().toString());
     }
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        final TextView resultCal = findViewById(R.id.resultCalc);
+        resultCal = findViewById(R.id.resultCalc);
         resultCal.setText(savedInstanceState.getString("txt"));
+        Log.d("SaveSS",resultCal.getText().toString());
     }
 
     @Override
@@ -85,7 +89,50 @@ public class MainActivity extends AppCompatActivity {
         squared  = findViewById(R.id.seqBtn);
         cubed = findViewById(R.id.cubeBtn);
 
+        MRbtn = findViewById(R.id.MRBtn);
+        MCbtn = findViewById(R.id.MCBtn);
+        MPbtn = findViewById(R.id.MpBtn);
+        Nbtn = findViewById(R.id.NBtn);
+        MRbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(savedNumber !=0.0f) {
+                    resultCal.setText(resultCal.getText().toString() + String.valueOf(savedNumber));
+                } else{
+                    Toast t = Toast.makeText(getApplicationContext(),"There is no number stored in memory", Toast.LENGTH_LONG);
+                    t.show();
+                }
+            }
+        });
+        MPbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                savedNumber = Float.parseFloat(resultCal.getText().toString());
+                resultCal.setText("");
+            }
+        });
+        MCbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                savedNumber = 0.0f;
+            }
+        });
+        Nbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(operation == ' ') {
+                    float negationNo = Float.parseFloat(resultCal.getText().toString());
+                    negationNo *= -1;
+                    resultCal.setText(String.valueOf(negationNo));
+                }else{
+                    String txt = resultCal.getText().toString();
+                    String txt2 =txt.substring(txt.lastIndexOf(operation)+1);
+                    float negationNo = Float.parseFloat(txt2);
+                    resultCal.setText(txt.substring(0,txt.lastIndexOf(operation)+1) +" "+ negationNo*-1);
 
+                }
+            }
+        });
         rotate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

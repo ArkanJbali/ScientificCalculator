@@ -24,8 +24,38 @@
         android:layout_marginLeft="15dp"
         android:layout_below="@+id/resultCalc"
         android:layout_width="265dp"
-        android:layout_height="290dp"
+        android:layout_height="350dp"
         android:layout_marginStart="25dp">
+        <TableRow>
+            <Button
+                android:id="@+id/MRBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_buttons"
+                android:text="@string/mr"
+                android:textAlignment="center"
+                android:textColor="@color/specialtexts"
+                android:textSize="25sp"/>
+            <Button
+                android:id="@+id/MCBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_buttons"
+                android:text="@string/mc"
+                android:textAlignment="center"
+                android:textColor="@color/specialtexts"
+                android:textSize="25sp"/>
+            <Button
+                android:id="@+id/MpBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_buttons"
+                android:text="@string/mp"
+                android:textAlignment="center"
+                android:textColor="@color/specialtexts"
+                android:textSize="25sp" />
+
+        </TableRow>
         <TableRow>
             <Button
                 android:id="@+id/seqBtn"
@@ -236,16 +266,28 @@
         android:layout_marginTop="48dp"
         />
     <Button
+        android:layout_below="@+id/delBtn"
+        android:id="@+id/NBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/n"
+        android:background="@drawable/white_buttons"
+        android:textColor="@color/specialtexts"
+        android:layout_toRightOf="@+id/calBody"
+        android:textSize="30sp"
+        />
+    <Button
 
         android:id="@+id/pluBtn"
         android:layout_width="wrap_content"
-        android:layout_height="140dp"
+        android:layout_height="100dp"
         android:text="@string/add"
         android:textAlignment="center"
         android:background="@drawable/white_buttons"
         android:textColor="@color/specialtexts"
         android:textSize="40sp"
-        android:layout_below="@+id/delBtn"
+        android:layout_below="@+id/NBtn"
         android:layout_toRightOf="@+id/calBody"
         />
     <Button
@@ -253,7 +295,7 @@
         android:layout_toRightOf="@+id/calBody"
         android:id="@+id/equalBtn"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="140dp"
         android:textAlignment="center"
         android:text="@string/equal"
         android:background="@drawable/textview_draw"

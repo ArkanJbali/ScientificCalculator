@@ -30,6 +30,10 @@
     <string name="ee">e^x</string>
     <string name="mod">%</string>
     <string name="bow">( )</string>
+    <string name="mr">MR</string>
+    <string name="mc">MC</string>
+    <string name="mp">M+</string>
+    <string name="n">N</string>
 
 
 
