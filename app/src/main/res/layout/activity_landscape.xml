@@ -33,11 +33,11 @@
                 android:textSize="20sp"
                 />
             <Button
-                android:id="@+id/plusminBtn"
+                android:id="@+id/NBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="@string/plumin"
+                android:text="@string/n"
                 android:background="@drawable/button_draw"
                 android:textColor="@color/texts"
                 android:textSize="20sp"
@@ -119,15 +119,16 @@
                 android:textSize="20sp"
                 />
             <Button
-                android:id="@+id/tanBtn"
+                android:id="@+id/MCBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="@string/tan"
+                android:text="@string/mc"
                 android:background="@drawable/button_draw"
                 android:textColor="@color/texts"
                 android:textSize="20sp"
                 />
+
 
             <Button
                 android:id="@+id/sevBtn"
@@ -183,21 +184,21 @@
                 android:textSize="20sp"
                 />
             <Button
-                android:id="@+id/lnBtn"
+                android:id="@+id/tanBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="@string/ln"
+                android:text="@string/tan"
                 android:background="@drawable/button_draw"
                 android:textColor="@color/texts"
                 android:textSize="20sp"
                 />
             <Button
-                android:id="@+id/domenaterBtn"
+                android:id="@+id/MpBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="@string/dom"
+                android:text="@string/mp"
                 android:background="@drawable/button_draw"
                 android:textColor="@color/texts"
                 android:textSize="20sp"
@@ -267,11 +268,11 @@
                 android:textSize="20sp"
                 />
             <Button
-                android:id="@+id/eeBtn"
+                android:id="@+id/MRBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="@string/ee"
+                android:text="@string/mr"
                 android:background="@drawable/button_draw"
                 android:textColor="@color/texts"
                 android:textSize="20sp"
